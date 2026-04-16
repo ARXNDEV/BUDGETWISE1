@@ -29,6 +29,9 @@ const learnRoutes = require('./routes/learnRoutes');
 // Initialize the Express application
 const app = express();
 
+// Trust reverse proxy (crucial for Render/Vercel OAuth HTTPS redirects)
+app.set('trust proxy', 1);
+
 // Establish connection to MongoDB via Prisma
 connectDB();
 
